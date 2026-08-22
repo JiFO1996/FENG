@@ -130,7 +130,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;b
 </div>
 <script>
 // ===== 密码验证 =====
-const PASSWORD_HASH = "197e5cdab8144d07ff122a2982cc29f7053b2e79cde962d1317ad9414bc83d27";
+const PASSWORD_HASH = "35f6c865da33895d79c611103920f071ca602fcbbe8d7debb08fbccc3c8e6141";
 async function hashPassword(pwd){
   const data=new TextEncoder().encode(pwd+"TED_BARCODE_SALT_2026");
   const buf=await crypto.subtle.digest("SHA-256",data);
