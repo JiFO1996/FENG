@@ -70,7 +70,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;b
 .list-item .idx{color:#999;font-size:11px;min-width:28px}
 .shortcuts{margin-top:16px;padding:12px 16px;background:#f8f9fa;border-radius:8px;font-size:12px;color:#777;line-height:1.8}
 .shortcuts kbd{background:#e8eaed;padding:2px 6px;border-radius:4px;font-family:monospace;font-size:11px;border:1px solid #ccc}
-@media(max-width:600px){.import-row{flex-direction:column}.btn-group{flex-direction:row;flex-wrap:wrap}.control-bar{flex-direction:column;align-items:stretch}.progress-info{margin-left:0;text-align:center}.tracking-number{font-size:20px}}
+@media(max-width:600px){.interval-group{display:flex;align-items:center;gap:6px;white-space:nowrap}.import-row{flex-direction:column}.btn-group{flex-direction:row;flex-wrap:wrap}.control-bar{flex-direction:column;align-items:stretch}.progress-info{margin-left:0;text-align:center}.tracking-number{font-size:20px}}
 </style>
 </head>
 <body>
@@ -107,9 +107,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;b
 <div class="stats" id="stats"></div>
 </div>
 <div class="control-bar" id="controlBar" style="display:none">
-<label>切换间隔：</label>
-<input type="number" id="intervalInput" value="3" min="1" max="60" onchange="updateInterval()">
-<label>秒</label>
+    <div class="interval-group">
+        <label>切换间隔：</label>
+        <input type="number" id="intervalInput" value="3" min="1" max="60" onchange="updateInterval()">
+        <label>秒</label>
+</div>
 <button class="btn btn-success" id="btnPlay" onclick="toggleAutoPlay()">▶ 自动播放</button>
 <button class="btn btn-secondary" onclick="prevBarcode()">⏮ 上一个</button>
 <button class="btn btn-secondary" onclick="nextBarcode()">⏭ 下一个</button>
