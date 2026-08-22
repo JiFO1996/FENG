@@ -192,7 +192,7 @@ function renderBarcode(idx){
   if(!old){const pc=document.createElement('div');pc.className='progress-bar-container';pc.innerHTML='<div class="progress-bar-fill" style="width:'+pct+'%"></div>';display.appendChild(pc);}
   else{old.querySelector('.progress-bar-fill').style.width=pct+'%';}
   renderList();
-}function nextBarcode(){currentIdx=(currentIdx+1)%barcodes.length;renderBarcode(currentIdx);}
+}function nextBarcode(){if(currentIdx<barcodes.length-1){currentIdx++;renderBarcode(currentIdx);}else{clearInterval(timer);isPlaying=false;document.getElementById('btnPlay').textContent='▶ 自动播放';document.getElementById('btnPlay').className='btn btn-success';}}
 function prevBarcode(){currentIdx=(currentIdx-1+barcodes.length)%barcodes.length;renderBarcode(currentIdx);}
 function toggleAutoPlay(){
   if(isPlaying){clearInterval(timer);isPlaying=false;document.getElementById('btnPlay').textContent='▶ 自动播放';document.getElementById('btnPlay').className='btn btn-success';}
